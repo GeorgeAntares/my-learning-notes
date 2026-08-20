@@ -23,6 +23,13 @@ Documenting my notes and summaries from the software development learning proces
 
 ### MySQL
 - [MySQL 数据库基础 / MySQL Database Basics](MySQL/MySQL%20数据库基础.md)
+- [SQL 进阶 / SQL Advanced](MySQL/SQL%20进阶.md) — JOIN、子查询、窗口函数、索引、事务 / JOIN, Subqueries, Window Functions, Indexes, Transactions
+
+### Redis
+- [Redis 基础 / Redis Fundamentals](Redis/Redis%20基础.md) — 数据结构、持久化、缓存模式、常见问题 / Data Structures, Persistence, Caching Patterns, Common Issues
+
+### 计算机网络 / Computer Network
+- [计算机网络基础 / Computer Network Fundamentals](Network/计算机网络基础.md) — HTTP/TCP/IP、DNS、面试题 / HTTP/TCP/IP, DNS, Interview Questions
 
 ### Maven
 - [Maven 多模块项目管理 / Maven Multi-Module Project Management](Maven/Maven%20多模块项目管理.md)
