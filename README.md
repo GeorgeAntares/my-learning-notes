@@ -15,6 +15,21 @@ Documenting my notes and summaries from the software development learning proces
 ### RuoYi 框架 / RuoYi Framework
 - [RuoYi 框架开发笔记 / RuoYi Framework Development Notes](RuoYi/RuoYi%20框架开发笔记.md)
 
+### MySQL
+- [MySQL 数据库基础 / MySQL Database Basics](MySQL/MySQL%20数据库基础.md)
+
+### Maven
+- [Maven 多模块项目管理 / Maven Multi-Module Project Management](Maven/Maven%20多模块项目管理.md)
+
+### IDEA
+- [IDEA 使用技巧 / IDEA Usage Tips](IDEA/IDEA%20使用技巧.md)
+
+### uni-app
+- [uni-app 小程序开发 / uni-app Mini-Program Development](uni-app/uni-app%20小程序开发.md)
+
+### DevOps
+- [项目部署与环境配置 / Project Deployment & Environment Configuration](DevOps/项目部署与环境配置.md)
+
 ### 学习路线 / Learning Roadmap
 - [学习路线与框架 / Learning Roadmap & Framework](学习路线/学习路线与框架.md)
 
