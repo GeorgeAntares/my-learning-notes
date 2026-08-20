@@ -6,13 +6,16 @@
 
 The project uses MySQL, connected via tools like Navicat.
 
+> **注意 Note**：以下为配置模板，请替换为实际值。
+> The following is a config template. Replace with actual values.
+
 | 参数 Parameter | 值 Value | 说明 Description |
 |------|------|------|
-| Host | 192.168.6.60 | 数据库服务器地址 / Database server address |
-| Port | 8106 | 端口 / Port |
-| Database | loop_db | 数据库名 / Database name |
-| Username | loop | 用户名 / Username |
-| Password | ****** | 密码 / Password |
+| Host | `<db-host>` | 数据库服务器地址 / Database server address |
+| Port | `<db-port>` | 端口 / Port |
+| Database | `<db-name>` | 数据库名 / Database name |
+| Username | `<username>` | 用户名 / Username |
+| Password | `<password>` | 密码 / Password |
 
 ## 二、表结构文件位置 / Table Schema File Location
 
@@ -37,7 +40,7 @@ sql/
 |------|------|------|
 | config_id | int | 配置ID（主键）/ Config ID (PK) |
 | config_name | varchar(100) | 配置名称 / Config name |
-| config_key | varchar(100) | 配置键（以 loop. 开头）/ Config key (starts with loop.) |
+| config_key | varchar(100) | 配置键（项目前缀开头）/ Config key (starts with project prefix) |
 | config_value | varchar(500) | 配置值 / Config value |
 | config_type | char(1) | Y=内置 N=自定义 / Y=built-in N=custom |
 | create_by / create_time | — | 创建审计 / Create audit |
@@ -75,8 +78,8 @@ sql/
 ### 查询 / Query
 
 ```sql
--- 查询所有 loop. 开头的配置 / Query all configs starting with loop.
-SELECT * FROM sys_config WHERE config_key LIKE 'loop.%';
+-- 查询所有项目前缀开头的配置 / Query all configs starting with project prefix
+SELECT * FROM sys_config WHERE config_key LIKE '<prefix>.%';
 
 -- 查询已发布的公告 / Query published notices
 SELECT * FROM sys_notice WHERE status = '0' ORDER BY create_time DESC;
@@ -90,22 +93,22 @@ SELECT * FROM sys_menu WHERE parent_id = 2250 ORDER BY order_num;
 ```sql
 -- 新增配置 / Insert config
 INSERT INTO sys_config (config_name, config_key, config_value, config_type, create_by, create_time)
-VALUES ('客服电话', 'loop.customer.service.phone', '400-123-4567', 'N', 'admin', NOW());
+VALUES ('客服电话', '<prefix>.customer.service.phone', '400-xxx-xxxx', 'N', 'admin', NOW());
 ```
 
 ### 更新 / Update
 
 ```sql
 -- 修改配置值 / Update config value
-UPDATE sys_config SET config_value = '400-999-8888', update_by = 'admin', update_time = NOW()
-WHERE config_key = 'loop.customer.service.phone';
+UPDATE sys_config SET config_value = '400-xxx-xxxx', update_by = 'admin', update_time = NOW()
+WHERE config_key = '<prefix>.customer.service.phone';
 ```
 
 ### 删除 / Delete
 
 ```sql
 -- 删除配置 / Delete config
-DELETE FROM sys_config WHERE config_key = 'loop.customer.service.phone';
+DELETE FROM sys_config WHERE config_key = '<prefix>.customer.service.phone';
 
 -- 批量删除公告 / Batch delete notices
 DELETE FROM sys_notice WHERE notice_id IN (1, 2, 3);
@@ -140,10 +143,10 @@ Almost all tables have these 4 audit fields:
 Config keys use `.` separated namespace:
 
 ```
-loop.              → LOOP 项目前缀 / Project prefix
-loop.customer.*     → 客服相关 / Customer service related
-loop.app.*          → 应用相关 / App related
-loop.order.*        → 订单相关 / Order related
+<project>.            → 项目前缀 / Project prefix
+<project>.customer.*   → 客服相关 / Customer service related
+<project>.app.*        → 应用相关 / App related
+<project>.order.*      → 订单相关 / Order related
 ```
 
 ## 六、Navicat 使用技巧 / Navicat Tips

@@ -4,7 +4,7 @@
 
 LOOP 项目有两个小程序端：
 
-The LOOP project has two mini-program clients:
+The project has two mini-program clients:
 
 | 小程序 Mini-Program | 目录 Directory | 说明 Description |
 |------|------|------|
@@ -39,7 +39,7 @@ Configure backend API URL in `utils/config.js`:
 ```javascript
 // 每次重连 WiFi 后 IP 可能变化，需要同步更新
 // IP may change after reconnecting WiFi, update accordingly
-const BASE_URL = 'http://192.168.6.150:8080'
+const BASE_URL = 'http://<your-ip>:8080'
 
 export default {
   BASE_URL

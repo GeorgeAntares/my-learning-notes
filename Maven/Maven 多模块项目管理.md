@@ -7,7 +7,7 @@ Maven 多模块项目把一个大型项目拆分成多个子模块，每个模�
 A Maven multi-module project splits a large project into multiple sub-modules, each responsible for different functionality. Modules can depend on each other.
 
 ```
-loop-serv/（父项目 Parent）
+<project-root>/（父项目 Parent）
 ├── pom.xml              → 父 POM，定义公共配置 / Parent POM, defines common config
 ├── ruoyi-admin/         → 启动模块，依赖所有其他模块 / Entry module, depends on all others
 ├── ruoyi-framework/     → 框架核心 / Framework core
@@ -83,7 +83,7 @@ Could not find the selected project in the reactor: ruoyi-admin
 
 **解决 Solution**：
 ```bash
-cd C:\Users\10735\programme\loop-serv
+cd <your-project-root>
 mvn -pl ruoyi-admin -am compile
 ```
 
@@ -130,7 +130,7 @@ Could not resolve dependencies: Failed to collect dependencies
 ### Maven 路径 / Maven Path
 
 ```
-C:\Users\10735\.m2\wrapper\dists\apache-maven-3.9.16-bin\...\bin\mvn.cmd
+<user-home>\.m2\wrapper\dists\apache-maven-3.9.16-bin\...\bin\mvn.cmd
 ```
 
 ### 关键设置 / Key Settings

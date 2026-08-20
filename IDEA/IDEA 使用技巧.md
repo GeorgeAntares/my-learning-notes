@@ -4,7 +4,7 @@
 
 ### 打开项目 / Open Project
 
-`File` → `Open` → 选择项目根目录（如 `loop-serv`）
+`File` → `Open` → 选择项目根目录 / Select project root directory
 
 **注意 Note**：如果只打开了子模块（如 `ruoyi-admin`），会看不到 `sql/` 目录。要打开整个项目根目录。
 
